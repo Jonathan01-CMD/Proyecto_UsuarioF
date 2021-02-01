@@ -21,6 +21,7 @@ namespace Proyecto_UsuarioF
         }
         private void Limpiar()
         {
+            RolIdNumericUpDown1.Value = 0;
             idNumericUpDown1.Value = 0;
             textNombre.Text = string.Empty;
             txt_alias.Text = string.Empty;
@@ -29,12 +30,14 @@ namespace Proyecto_UsuarioF
             dateTimePicker1.CustomFormat = " ";
             txt_email.Text = string.Empty;
             txt_clave.Text = string.Empty;
+            txt_CC.Text = string.Empty;
+            txt_CH.Text = string.Empty;
 
         }
 
         private void LlenaCampo(Usuario usuario)
         {
-
+            RolIdNumericUpDown1.Value = usuario.IdR;
             idNumericUpDown1.Value = usuario.UsuarioId;
             textNombre.Text = usuario.Nombres;
             txt_alias.Text = usuario.Alias;
@@ -43,6 +46,7 @@ namespace Proyecto_UsuarioF
             dateTimePicker1.Value = usuario.FechaIngreso;
             txt_email.Text = usuario.Email;
             txt_clave.Text = usuario.Clave;
+            checkBox1.Checked = usuario.Activo;
         }
 
         private Usuario LlenaClase()
@@ -56,6 +60,8 @@ namespace Proyecto_UsuarioF
             usuario.RolId = cb_rol.Text;
             usuario.UsuarioNombre = txt_usuario.Text;
             usuario.Email = txt_email.Text;
+            usuario.IdR = (int)RolIdNumericUpDown1.Value;
+            usuario.Activo = checkBox1.Checked;
             return usuario;
         }
 
@@ -69,16 +75,7 @@ namespace Proyecto_UsuarioF
 
             usuarios = LlenaClase();
 
-            if (!(UsuarioBll.Existe((int)idNumericUpDown1.Value)))
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                    paso = UsuarioBll.Guardar(usuarios);
-                else
-                {
-                    MessageBox.Show("Id Existente", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+            paso = UsuarioBll.Guardar(usuarios);
 
             if (paso)
             {
@@ -181,41 +178,6 @@ namespace Proyecto_UsuarioF
                 errorProvider1.SetError(idNumericUpDown1, "No se puede eliminar un usuario que no existe");
         }
 
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            Usuario usuarios;
-            bool paso = false;
-
-            if (!Validar())
-                return;
-
-            usuarios = LlenaClase();
-
-            if (!(UsuarioBll.Existe((int)idNumericUpDown1.Value)))
-            {
-                MessageBox.Show("No se puede modificar. Id no encontrado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No se puede modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                paso = UsuarioBll.Modificar(usuarios);
-            }
-
-            if (paso)
-            {
-                Limpiar();
-                MessageBox.Show("Modificado!!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("No fue posible Modificar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private bool Validar()
         {
             bool pasos = true;
@@ -270,6 +232,42 @@ namespace Proyecto_UsuarioF
         private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void cb_rol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cb_rol.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id;
+            Usuario usuario = new Usuario();
+            int.TryParse(idNumericUpDown1.Text, out id);
+
+            Limpiar();
+
+            usuario = BLL.UsuarioBll.Buscar(id);
+
+            if (usuario != null)
+            {
+                MessageBox.Show("Usuario En Base de datos");
+                LlenaCampo(usuario);
+            }
+            else
+            {
+                MessageBox.Show("Usuario no Existe");
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

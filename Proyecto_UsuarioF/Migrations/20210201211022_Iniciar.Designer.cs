@@ -9,8 +9,8 @@ using Proyecto_UsuarioF.DAL;
 namespace Proyecto_UsuarioF.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210131164256_Inicial")]
-    partial class Inicial
+    [Migration("20210201211022_Iniciar")]
+    partial class Iniciar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace Proyecto_UsuarioF.Migrations
 
             modelBuilder.Entity("Proyecto_UsuarioF.Entidades.Usuario", b =>
                 {
-                    b.Property<int>("UsuarioId")
+                    b.Property<int>("IdR")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -45,10 +45,13 @@ namespace Proyecto_UsuarioF.Migrations
                     b.Property<string>("RolId")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("UsuarioNombre")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("UsuarioId");
+                    b.HasKey("IdR");
 
                     b.ToTable("Usuarios");
                 });

@@ -8,6 +8,7 @@ namespace Proyecto_UsuarioF.Entidades
     public class Usuario
     {
         [Key]
+        public int IdR { get; set; }
         public int UsuarioId { get; set; }
         public DateTime FechaIngreso { get; set; }
         public string Alias { get; set; }
@@ -21,6 +22,7 @@ namespace Proyecto_UsuarioF.Entidades
         public Usuario()
         {
             UsuarioId = 0;
+            IdR = 0;
             FechaIngreso = DateTime.Now;
             Alias = string.Empty;
             Nombres = string.Empty;

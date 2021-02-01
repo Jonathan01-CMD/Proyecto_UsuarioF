@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_UsuarioF.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Iniciar : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,9 @@ namespace Proyecto_UsuarioF.Migrations
                 name: "Usuarios",
                 columns: table => new
                 {
-                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdR = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false),
                     FechaIngreso = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Alias = table.Column<string>(type: "TEXT", nullable: true),
                     Nombres = table.Column<string>(type: "TEXT", nullable: true),
@@ -24,7 +25,7 @@ namespace Proyecto_UsuarioF.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioId);
+                    table.PrimaryKey("PK_Usuarios", x => x.IdR);
                 });
         }
 
