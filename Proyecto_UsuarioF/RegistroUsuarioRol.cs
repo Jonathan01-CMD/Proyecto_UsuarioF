@@ -31,6 +31,7 @@ namespace Proyecto_UsuarioF
             ClaveTexbox.Clear();
             ConfirmarClaveTexbox.Clear();
             CostoXHoraTexbox.Clear();
+
         }
 
         private void LlenaCampo(Usuario usuario)
