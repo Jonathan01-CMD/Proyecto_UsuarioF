@@ -8,30 +8,23 @@ using System.Linq.Expressions;
 
 namespace Proyecto_UsuarioF.BLL
 {
-    class UsuarioBll
+    class RollBll
     {
-        public static bool Guardar(Usuario usuarios)
+        public static bool Guardar(Roll roles)
         {
-            if (!Existe(usuarios.UsuarioId))
-                return Insertar(usuarios);
+            if (!Existe(roles.RolliD))
+                return Insertar(roles);
             else
-                return false;
+                return Modificar(roles);
         }
-        public static bool Editar(Usuario usuarios)
-        {
-            if (Existe(usuarios.UsuarioId))
-                return Modificar(usuarios);
-            else
-                return false;
-        }
-        private static bool Insertar(Usuario usuarios)
+        private static bool Insertar(Roll roles)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Usuario.Add(usuarios);
+                contexto.Roll.Add(roles);
                 paso = contexto.SaveChanges() > 0;
 
             }
@@ -47,14 +40,14 @@ namespace Proyecto_UsuarioF.BLL
             return paso;
         }
 
-        public static bool Modificar(Usuario usuarios)
+        public static bool Modificar(Roll roles)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Entry(usuarios).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                contexto.Entry(roles).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -96,14 +89,14 @@ namespace Proyecto_UsuarioF.BLL
             return paso;
         }
 
-        public static Usuario Buscar(int id)
+        public static Roll Buscar(int id)
         {
-            Contexto contexto = new Contexto();
-            Usuario usuario;
+            Contexto rolcontexto = new Contexto();
+            Roll roles;
 
             try
             {
-                usuario = contexto.Usuario.Find(id);
+                roles = rolcontexto.Roll.Find(id);
             }
             catch (Exception)
             {
@@ -111,20 +104,20 @@ namespace Proyecto_UsuarioF.BLL
             }
             finally
             {
-                contexto.Dispose();
+                rolcontexto.Dispose();
             }
 
-            return usuario;
+            return roles;
         }
 
         public static bool Existe(int id)
         {
-            Contexto contexto = new Contexto();
+            Contexto roll = new Contexto();
             bool encontrado = false;
 
             try
             {
-                encontrado = contexto.Usuario.Any(e => e.UsuarioId == id);
+                encontrado = roll.Roll.Any(e => e.RolliD == id);
             }
             catch (Exception)
             {
@@ -132,19 +125,19 @@ namespace Proyecto_UsuarioF.BLL
             }
             finally
             {
-                contexto.Dispose();
+                roll.Dispose();
             }
 
             return encontrado;
         }
-        private static List<Usuario>GetList(Expression<Func<Usuario, bool>> criterio)
+        private static List<Roll> GetList(Expression<Func<Roll, bool>> criterio)
         {
-            List<Usuario> lista = new List<Usuario>();
+            List<Roll> lista = new List<Roll>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.Usuario.Where(criterio).ToList();
+                lista = contexto.Roll.Where(criterio).ToList();
             }
             catch (Exception)
             {

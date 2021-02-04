@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_UsuarioF.DAL;
 
-namespace Proyecto_UsuarioF.Migrations
+namespace ProyectoReguistroUsuario.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210131164256_Inicial")]
+    [Migration("20210204163327_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,6 +17,23 @@ namespace Proyecto_UsuarioF.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.2");
+
+            modelBuilder.Entity("Proyecto_UsuarioF.Entidades.Roll", b =>
+                {
+                    b.Property<int>("RolliD")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Fechacreacion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("RolliD");
+
+                    b.ToTable("Roll");
+                });
 
             modelBuilder.Entity("Proyecto_UsuarioF.Entidades.Usuario", b =>
                 {
@@ -50,7 +67,7 @@ namespace Proyecto_UsuarioF.Migrations
 
                     b.HasKey("UsuarioId");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuario");
                 });
 #pragma warning restore 612, 618
         }

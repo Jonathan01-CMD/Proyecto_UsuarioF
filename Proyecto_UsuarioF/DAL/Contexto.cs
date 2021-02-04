@@ -8,7 +8,9 @@ namespace Proyecto_UsuarioF.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+
+        public DbSet<Roll> Roll { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source = GestionUsuario.Db");
