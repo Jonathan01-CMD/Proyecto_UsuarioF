@@ -58,7 +58,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+<<<<<<< HEAD:Proyecto_UsuarioF/RegistroUsuarioRol.resx
   <data name="ButtonEliminar.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+=======
+  <data name="btn_buscar.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAADgklE
+        QVRYR7XXTUhUURQH8DeOX2hoTYqQFWHJiISBQS7cKC5c+JGiQZkrwVzoTkuFCBI3JehC7ANR0TT8FrVE
+        LZLIRdJGaFUtKiLaRwV9nv7/iw4z886Mb8wO/GB459x7ru9d352xdhFRsA+OwvEt/MxrzP2X4MSZcAn6
+        YQ1ew9st/MxrzNUDa/dkMZzkDNyGd/AbZAesYe0tOA27XkgKXIdPoDVy4iNcg4MQUWTDQ3DyF++EczyA
+        LHAUp+AFaJP9i+dwEsLGEeBm0ibYC4/gMKgRDwOgDQwQExMjcXFxas4Bbmj2ssVF+AbaIElISJDS0lLp
+        7u6WiYkJmZmZkb6+PqmtrRWPx6OOCYE9zkNAcJc+A22AZGVlyfDwsMzPz0tLS4uUlZVJcXGxNDY2ytjY
+        mMzNzUl+fr46NoSn4AFf1MIPsBV7vV5ZXV2VtrY2SU5OtuX5KHgX1tbWpKioyJYPgb18dyEa7oOtMD4+
+        XoaGhqS9vV3cbrct76+qqkqWlpYkPT1dzSvuAXtbJ+AN2Ip4mxcXFx09Yy6wv79fmpqa1LyCPXmOWJXw
+        FWxFXV1d5q/XchrehfHxcfNfouWDsCd7W1fgDwQUREVFycDAgFRXVwdcDyc7O1uWl5clNTVVzQdhz8tg
+        3dm6EIALGBwclIqKClsuFG7YlZUVSUtLU/OKNrAm/S4E6OnpkebmZjWnKSkpkenpaYmNjVXziqtgjk0t
+        KZWVlTI1NSWJiYlqPhgX3NraquZCMHeAz8G2BygpKcm88err6225YAUFBeb2Z2ZmqnkFe7aAVQHqfwHl
+        5uaajVVTU6Pubu6VwsJC2dzclM7OTls+DPY8C1YG8CuVVmTk5eXJ7OysjIyMmIVwUTk5OWaD9vb2mgV2
+        dHTI+vq6eWzaHIpXwN6WG/hW0op8UlJSpK6uTkZHR83LaWFhQSYnJ80mzcjIMDXl5eWysbHhdBFDwN4m
+        LoB6FgSLjo42e4PngvZIHC7iO1SDL3gy8YTSiiO2vYgw75AnEHAaMs7BF9AGRIzvhIaGBrNJg3LswY1v
+        izi4C8EDds3lcmnX+4C91EgHfm/TBu6FJTgEYYNfyfdsP/h5DF5wFDynZ+EXaJNFgnPwvDkGEcUB4FH9
+        AbSJnXgPfNXvh12FC3LgJvBt+RO0Rv5Yw9obwB8inOOfw//X8TC8hM+w3ZSfeY051jj8dWxZfwH/I3de
+        vTRk2AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_validar.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btn_eliminar.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+>>>>>>> 546a3d14b8670f013de56a2fcb0427db5a14f853:Proyecto_UsuarioF/Form1.resx
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAAnAAAAJwEqCZFPAAAGXElE
@@ -92,10 +149,17 @@
         4fVckv4FIzOeLQZT0WsAAAAASUVORK5CYII=
 </value>
   </data>
+<<<<<<< HEAD:Proyecto_UsuarioF/RegistroUsuarioRol.resx
   <data name="GuardarButton.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3UAAAN1AHvkboVAAAEa0lE
+=======
+  <data name="btn_guardar.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3QAAAN0AEQbD0HAAAEa0lE
+>>>>>>> 546a3d14b8670f013de56a2fcb0427db5a14f853:Proyecto_UsuarioF/Form1.resx
         QVRYR7WX308cVRiGN63/hPWuBbRQwu4CKVSpSdsUITHVBqINLUSIRKAQu7KFVi1FBaVQqKk2eqFWEzGV
         qrTGUNAW6JU3emEDRY3Wm0ahdZcfW9aFhdf3m52pzOyZ3QHbkzzZ7Jxvvu85M2fOnHEla+j2EPd6/qYT
         H/mCjJEQgc6cfuxLIjEZRM7Rs6yhycl6knzyHrlBosQoaofESKyck0dWJ4IurbCwgZwgU0RVyAmTRHI8

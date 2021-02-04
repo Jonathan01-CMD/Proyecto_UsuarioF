@@ -15,14 +15,7 @@ namespace Proyecto_UsuarioF.BLL
             if (!Existe(usuarios.UsuarioId))
                 return Insertar(usuarios);
             else
-                return false;
-        }
-        public static bool Editar(Usuario usuarios)
-        {
-            if (Existe(usuarios.UsuarioId))
                 return Modificar(usuarios);
-            else
-                return false;
         }
         private static bool Insertar(Usuario usuarios)
         {
